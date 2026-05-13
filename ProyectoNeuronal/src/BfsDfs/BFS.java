@@ -29,7 +29,7 @@ public class BFS {
         while (!cola.estaVacia()) {
             Neurona actual = cola.desencolar();
 
-            // se usala lista de conexiones de la neurona 
+            //** se usa la lista de conexiones de la neurona**/ 
             Nodo<ConexionSinaptica> temp = actual.getConexionesSalientes().getCabeza();
             while (temp != null) {
                 Neurona vecino = temp.getDato().getDestino();

@@ -12,14 +12,14 @@ import Edd.Nodo;
  * @author chris
  */
 public class redNeuronal {
-    // Lista de todas las neuronas que existen en el cerebro
+    // Lista de todas las neuronas que existen en el cerebro**/
     private ListaEnlazada<Neurona> todasLasNeuronas;
 
     public redNeuronal() {
         this.todasLasNeuronas = new ListaEnlazada<>();
     }
 
-    // Este es el método que necesita el BFS/DFS
+    // metodo para utilizar el BFS yDFS**/
     public Neurona buscarNeurona(String id) {
         Nodo<Neurona> temp = todasLasNeuronas.getCabeza();
         while (temp != null) {
@@ -28,7 +28,7 @@ public class redNeuronal {
             }
             temp = temp.getSiguiente();
         }
-        return null; // Si no la encuentra
+        return null; //** Si no la encuentra**/
     }
 
     public void agregarNeurona(Neurona n) {

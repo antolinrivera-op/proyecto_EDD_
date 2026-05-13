@@ -9,7 +9,7 @@ package Edd;
  * @author chris
  */
 
-    // Estructura LIFO (Last In, First Out)
+   
 public class Pila<T> {
     private Nodo<T> tope;
 
