@@ -7,7 +7,7 @@ package Edd;
 /**
  * Almacena un par clave-valor para la tabla hash.
  * Clave: identifica el elemento.
- * Valor: el objeto asociado. 2.
+ * Valor: el objeto asociado. 
  * @author ischl
  * @param <K> tipo de la clave
  * @param <V> tipo del valor
