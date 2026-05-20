@@ -13,7 +13,7 @@ package Edd;
 public class TablaHash<K, V> {
     private NodoHash<K, V>[] tabla;
     private int capacidad;
-    private int tamaño; 
+    private int size; 
     
     /** 
      * constructor. la capacidad debe ser un número primo para mejor distribución.
@@ -21,8 +21,8 @@ public class TablaHash<K, V> {
      */
     public TablaHash(int capacidad){
         this.capacidad = capacidad;
-        this.tamaño = 0;
-        this.tabla =new NodoHash[capacidad];
+        this.size = 0;
+        this.tabla = new NodoHash[capacidad];
     }    
     
     /**
@@ -59,7 +59,7 @@ public class TablaHash<K, V> {
         NodoHash<K, V> nuevo = new NodoHash<>(par);
         nuevo.setSiguiente(tabla[indice]);
         tabla[indice] = nuevo;
-        tamaño++;
+        size++;
     }
     
     /**
@@ -99,7 +99,7 @@ public class TablaHash<K, V> {
                 } else{
                     anterior.setSiguiente(actual.getSiguiente());
                 }
-                tamaño --;
+                size --;
                 return true;
             }
             anterior = actual;
@@ -122,13 +122,13 @@ public class TablaHash<K, V> {
      * @return Cantidad de elementos guardados.
      */
     public int getSize(){
-        return tamaño;
+        return size;
     }
     
     /**     * 
      * @return true si no hay elementos.
      */
     public boolean estaVacia(){
-        return tamaño == 0;
+        return size == 0;
     }
 }
