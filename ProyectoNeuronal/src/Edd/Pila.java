@@ -15,7 +15,7 @@ public class Pila<T> {
 
     public void apilar(T dato) {
         Nodo<T> nuevo = new Nodo<>(dato);
-        tope = nuevo.getSiguiente();
+        nuevo.setSiguiente(tope);
         tope = nuevo;
     }
 
@@ -26,5 +26,7 @@ public class Pila<T> {
         return dato;
     }
 
-    public boolean estaVacia() { return tope == null; }
+    public boolean estaVacia() {
+        return tope == null;
+    }
 }
