@@ -14,9 +14,13 @@ public class Cola<T> {
 
     public void encolar(T dato) {
         Nodo<T> nuevo = new Nodo<>(dato);
-        if (fin != null) nuevo = fin.getSiguiente();
+        if (fin != null) {
+            fin.setSiguiente(nuevo);
+        }
         fin = nuevo;
-        if (frente == null) frente = nuevo;
+        if (frente == null) {
+            frente = nuevo;
+        }
     }
 
     public T desencolar() {
@@ -27,6 +31,7 @@ public class Cola<T> {
         return dato;
     }
 
-    public boolean estaVacia() { return frente == null; }
+    public boolean estaVacia() {
+        return frente == null;
+    }
 }
-
