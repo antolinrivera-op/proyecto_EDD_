@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * Implementa el algoritmo de Dijkstra para encontrar la ruta de menor tiempo
- * de transmisión entre dos neuronas en un grafo dirigido.
+ * de transmisi&oacute;n entre dos neuronas en un grafo dirigido.
  * El peso de cada arista se calcula mediante {@link ConexionSinaptica#getTiempoTransmision(double)},
  * utilizando la velocidad del neurotransmisor obtenida del diccionario.
  * 
@@ -20,7 +20,7 @@ import java.util.Map;
 public class CalculadorRutaOptima {
 
     /**
-     * Calcula la ruta más rápida (menor tiempo) entre dos neuronas.
+     * Calcula la ruta m&aacute;s r&aacute;pida (menor tiempo) entre dos neuronas.
      *
      * @param red        Red neuronal que contiene todas las neuronas y conexiones.
      * @param idOrigen   Identificador de la neurona de inicio.
@@ -108,7 +108,7 @@ public class CalculadorRutaOptima {
     }
 
     /**
-     * Elimina un nodo específico de una lista enlazada y devuelve la nueva lista.
+     * Elimina un nodo espec&iacute;fico de una lista enlazada y devuelve la nueva lista.
      * @param lista Lista original.
      * @param n Nodo a eliminar.
      * @return Nueva lista sin el nodo.
