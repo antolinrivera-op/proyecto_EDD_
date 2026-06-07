@@ -4,7 +4,7 @@ import Edd.ListaEnlazada;
 
 /**
  * Representa una neurona dentro de la red neuronal.
- * Cada neurona tiene un identificador único y una lista de conexiones sinápticas salientes.
+ * Cada neurona tiene un identificador &uacute;nico y una lista de conexiones sin&aacute;pticas salientes.
  */
 public class Neurona {
     private String id;
@@ -34,16 +34,16 @@ public class Neurona {
     }
 
     /**
-     * @return La lista de conexiones sinápticas que salen de esta neurona.
+     * @return La lista de conexiones sin&aacute;pticas que salen de esta neurona.
      */
     public ListaEnlazada<ConexionSinaptica> getConexionesSalientes() {
         return conexionesSalientes;
     }
 
     /**
-     * Agrega una conexión sináptica a la lista de salientes.
+     * Agrega una conexi&oacute;n sin&aacute;ptica a la lista de salientes.
      *
-     * @param conexion La conexión a agregar (debe tener como origen esta neurona).
+     * @param conexion La conexi&oacute;n a agregar (debe tener como origen esta neurona).
      */
     public void agregarConexion(ConexionSinaptica conexion) {
         this.conexionesSalientes.agregar(conexion);
