@@ -1,7 +1,7 @@
 package Edd;
 
 /**
- * Nodo genérico para estructuras enlazadas (listas, pilas, colas).
+ * Nodo gen&eacute;rico para estructuras enlazadas (listas, pilas, colas).
  *
  * @param <T> Tipo de dato almacenado.
  * @author chris
