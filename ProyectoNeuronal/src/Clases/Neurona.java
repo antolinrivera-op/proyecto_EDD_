@@ -4,27 +4,22 @@ import Edd.ListaEnlazada;
 
 /**
  * Representa una neurona dentro de la red neuronal.
- * Cada neurona tiene un identificador único, una lista de conexiones
- * sinápticas salientes y un atributo de marcado para los algoritmos
- * de recorrido (BFS/DFS).
-
+ * Cada neurona tiene un identificador único y una lista de conexiones sinápticas salientes.
  */
 public class Neurona {
-
-
     private String id;
-
-   
     private final ListaEnlazada<ConexionSinaptica> conexionesSalientes;
 
     /**
-     * Atributo público usado por BFS y DFS para marcar la neurona como visitada.
+     * Flag público utilizado por los algoritmos de recorrido (BFS/DFS) para marcar visitados.
+     * No se recomienda su uso externo, pero se mantiene por compatibilidad.
      */
     public boolean visitado = false;
 
     /**
      * Constructor.
-     * @param id Identificador único de la neurona .
+     *
+     * @param id Identificador único de la neurona.
      */
     public Neurona(String id) {
         this.id = id;
@@ -47,7 +42,8 @@ public class Neurona {
 
     /**
      * Agrega una conexión sináptica a la lista de salientes.
-     * @param conexion La conexión a agregar (origen = esta neurona).
+     *
+     * @param conexion La conexión a agregar (debe tener como origen esta neurona).
      */
     public void agregarConexion(ConexionSinaptica conexion) {
         this.conexionesSalientes.agregar(conexion);
