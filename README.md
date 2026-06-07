@@ -12,7 +12,8 @@
   - Detección de **zonas aisladas** (neuronas no alcanzables desde una fuente).
 - **Ruta óptima (Dijkstra)**: calcula la ruta de **menor tiempo de transmisión** entre dos neuronas, usando la fórmula:
     tiempo = distancia / (velocidad_neurotransmisor * coeficiente_eficiencia)
-- - **Análisis de conectividad**: verifica si la red es **fuertemente conexa** (desde cualquier neurona se puede llegar a cualquier otra).
+  
+## **Análisis de conectividad**: verifica si la red es **fuertemente conexa** (desde cualquier neurona se puede llegar a cualquier otra).
 - **Gestor de fatiga**: multiplica el coeficiente de eficiencia `k` de todas las conexiones por 1.2, simulando el desgaste sináptico.
 
 ## Estructuras de datos implementadas desde cero
