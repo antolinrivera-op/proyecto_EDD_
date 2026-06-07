@@ -1,17 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Edd;
 
 /**
+ * Implementación de una cola (FIFO) con lista enlazada.
+ * Utilizada en el algoritmo BFS.
  *
+ * @param <T> Tipo de dato.
  * @author chris
  */
 public class Cola<T> {
     private Nodo<T> frente;
     private Nodo<T> fin;
 
+    /**
+     * Encola un elemento al final.
+     *
+     * @param dato Elemento a encolar.
+     */
     public void encolar(T dato) {
         Nodo<T> nuevo = new Nodo<>(dato);
         if (fin != null) {
@@ -23,6 +27,11 @@ public class Cola<T> {
         }
     }
 
+    /**
+     * Desencola el elemento del frente.
+     *
+     * @return El elemento desencolado, o {@code null} si la cola está vacía.
+     */
     public T desencolar() {
         if (frente == null) return null;
         T dato = frente.getDato();
@@ -31,6 +40,11 @@ public class Cola<T> {
         return dato;
     }
 
+    /**
+     * Verifica si la cola está vacía.
+     *
+     * @return {@code true} si no hay elementos.
+     */
     public boolean estaVacia() {
         return frente == null;
     }
