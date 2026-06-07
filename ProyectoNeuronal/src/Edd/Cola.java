@@ -30,7 +30,7 @@ public class Cola<T> {
     /**
      * Desencola el elemento del frente.
      *
-     * @return El elemento desencolado, o {@code null} si la cola está vacía.
+     * @return El elemento desencolado, o {@code null} si la cola est&aacute vac&iacute;a.
      */
     public T desencolar() {
         if (frente == null) return null;
@@ -41,7 +41,7 @@ public class Cola<T> {
     }
 
     /**
-     * Verifica si la cola está vacía.
+     * Verifica si la cola está vac&iacute;a.
      *
      * @return {@code true} si no hay elementos.
      */
