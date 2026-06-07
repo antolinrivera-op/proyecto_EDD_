@@ -5,8 +5,7 @@ import Edd.Nodo;
 
 /**
  * Representa la red neuronal completa, incluyendo neuronas y conexiones sinápticas.
- * Gestiona la aplicación de fatiga, eliminación de elementos y el acceso a los datos.
- * Esta clase cumple con los requerimientos A, F y G del proyecto.
+ * Gestiona la aplicación de fatiga, eliminación de elementos y acceso a los datos.
  *
  * @author ischl
  */
@@ -18,7 +17,7 @@ public class redNeuronal {
     /**
      * Constructor que recibe un diccionario de neurotransmisores.
      *
-     * @param dicc Diccionario ya cargado (puede ser el por defecto o uno personalizado).
+     * @param dicc Diccionario ya cargado.
      */
     public redNeuronal(DiccionarioNeurotransmisores dicc) {
         this.todasLasNeuronas = new ListaEnlazada<>();
@@ -37,7 +36,7 @@ public class redNeuronal {
      * Busca una neurona por su identificador (búsqueda secuencial O(n)).
      *
      * @param id Identificador de la neurona.
-     * @return La neurona encontrada o null si no existe.
+     * @return La neurona encontrada o {@code null} si no existe.
      */
     public Neurona buscarNeurona(String id) {
         Nodo<Neurona> temp = todasLasNeuronas.getCabeza();
@@ -62,10 +61,10 @@ public class redNeuronal {
     }
 
     /**
-     * Elimina una neurona y todas las conexiones que la involucren.
+     * Elimina una neurona y todas las conexiones que la involucran (como origen o destino).
      *
      * @param id Identificador de la neurona a eliminar.
-     * @return true si se eliminó correctamente, false si no existía.
+     * @return {@code true} si se eliminó correctamente, {@code false} si no existía.
      */
     public boolean eliminarNeurona(String id) {
         Neurona aEliminar = buscarNeurona(id);
@@ -90,7 +89,7 @@ public class redNeuronal {
             }
         }
 
-        
+
         Nodo<Neurona> nActual = todasLasNeuronas.getCabeza();
         Nodo<Neurona> nAnterior = null;
         while (nActual != null) {
@@ -143,7 +142,7 @@ public class redNeuronal {
     }
 
     /**
-     * Reinicia el flag de visitado de todas las neuronas a false.
+     * Reinicia el flag de visitado de todas las neuronas a {@code false}.
      * Se utiliza antes de ejecutar BFS o DFS.
      */
     public void reiniciarVisitados() {
