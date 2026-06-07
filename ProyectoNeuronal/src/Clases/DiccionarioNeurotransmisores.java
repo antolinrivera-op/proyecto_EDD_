@@ -3,29 +3,23 @@ package clases;
 import Edd.TablaHash;
 
 /**
- * Diccionario de neurotransmisores basado en una Tabla Hash propia.
+ * Diccionario de neurotransmisores basado en una tabla hash propia.
  * Contiene los 50 neurotransmisores del dataset oficial del proyecto.
- * Permite guardar y consultar neurotransmisores por su ID en tiempo O(1) promedio.
- * <p>Cumple el requerimiento D del proyecto: inserción y búsqueda O(1).</p>
+ * Las operaciones de inserción y búsqueda son O(1) promedio.
  *
  * @author ischl
  */
 public class DiccionarioNeurotransmisores {
-
     private TablaHash<String, Neurotransmisor> tabla;
 
     /**
-     * Constructor. Crea la tabla hash y carga automáticamente
-     * los 50 neurotransmisores del dataset del proyecto.
+     * Constructor. Carga automáticamente los 50 neurotransmisores por defecto.
      */
     public DiccionarioNeurotransmisores() {
         this.tabla = new TablaHash<>(53);
         cargarDiccionarioPorDefecto();
     }
 
-    /**
-     * Carga los 50 neurotransmisores del proyecto.
-     */
     private void cargarDiccionarioPorDefecto() {
         insertar(new Neurotransmisor("GLU", "Glutamato", "Excitatorio", 2.5, "Principal mediador de información sensorial y motora."));
         insertar(new Neurotransmisor("GABA", "Ácido Gamma-aminobutírico", "Inhibitorio", 1.2, "Reduce la actividad neuronal; control del estrés."));
@@ -79,14 +73,10 @@ public class DiccionarioNeurotransmisores {
         insertar(new Neurotransmisor("MOT", "Motilina", "Modulador", 0.8, "Comunicación intestino-cerebro."));
     }
 
-
-
     /**
-     * Inserta un neurotransmisor en el diccionario.
-     * Si ya existe uno con el mismo ID, se sobrescribe.
-     * Complejidad: O(1) promedio.
+     * Inserta un neurotransmisor. Si ya existe, sobrescribe.
      *
-     * @param nt El neurotransmisor a guardar.
+     * @param nt Neurotransmisor a insertar.
      */
     public void insertar(Neurotransmisor nt) {
         tabla.insertar(nt.getId(), nt);
@@ -94,41 +84,36 @@ public class DiccionarioNeurotransmisores {
 
     /**
      * Busca un neurotransmisor por su ID.
-     * Complejidad: O(1) promedio.
      *
-     * @param id El código del neurotransmisor (ej. "GLU", "GABA").
-     * @return El neurotransmisor encontrado, o null si no existe.
+     * @param id Código del neurotransmisor.
+     * @return El neurotransmisor o {@code null} si no existe.
      */
     public Neurotransmisor buscar(String id) {
         return tabla.buscar(id);
     }
 
     /**
-     * Verifica si un neurotransmisor existe en el diccionario.
-     * Complejidad: O(1) promedio.
+     * Verifica si un ID existe.
      *
-     * @param id El código a verificar.
-     * @return true si existe, false en caso contrario.
+     * @param id Código a verificar.
+     * @return {@code true} si existe.
      */
     public boolean contiene(String id) {
         return tabla.contiene(id);
     }
 
     /**
-     * Elimina un neurotransmisor del diccionario.
-     * Complejidad: O(1) promedio.
+     * Elimina un neurotransmisor por su ID.
      *
-     * @param id El código del neurotransmisor a eliminar.
-     * @return true si se eliminó, false si no existía.
+     * @param id Código a eliminar.
+     * @return {@code true} si se eliminó.
      */
     public boolean eliminar(String id) {
         return tabla.eliminar(id);
     }
 
     /**
-     * Reemplaza el diccionario actual por uno nuevo vacío.
-     * Útil cuando el usuario carga un archivo de diccionario distinto.
-     * Complejidad: O(1).
+     * Vacía el diccionario.
      */
     public void vaciar() {
         this.tabla = new TablaHash<>(53);
@@ -142,7 +127,7 @@ public class DiccionarioNeurotransmisores {
     }
 
     /**
-     * @return true si el diccionario está vacío.
+     * @return {@code true} si está vacío.
      */
     public boolean estaVacio() {
         return tabla.estaVacia();
