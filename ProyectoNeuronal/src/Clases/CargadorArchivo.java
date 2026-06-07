@@ -8,20 +8,18 @@ import Edd.Nodo;
  * Clase encargada de las operaciones de entrada/salida de archivos CSV.
  * Permite cargar la red neuronal y el diccionario de neurotransmisores,
  * así como guardar la red modificada.
- * Utiliza JFileChooser para la selección de archivos y muestra mensajes
- * de alerta con JOptionPane.
+ * Utiliza JFileChooser y muestra alertas con JOptionPane.
  *
- * @author ischl
  */
 public class CargadorArchivo {
 
     /**
      * Carga una red neuronal desde un archivo CSV seleccionado por el usuario.
-     * Formato esperado: origen, destino, distancia, ID_Neurotransmisor, coheficiente_eficiencia_sináptica.
-     * Si ya hay datos en memoria, pregunta al usuario si desea sobrescribir.
+     * Formato: origen, destino, distancia, ID_Neurotransmisor, coheficiente_eficiencia_sináptica.
+     * Si ya hay datos, pregunta si sobrescribir.
      *
      * @param red  Red neuronal donde se almacenarán los datos.
-     * @param dicc Diccionario de neurotransmisores para validar existencia de los IDs.
+     * @param dicc Diccionario de neurotransmisores (para validar).
      */
     public void cargarRedNeuronal(redNeuronal red, DiccionarioNeurotransmisores dicc) {
         if (!red.estaVacia()) {
@@ -84,10 +82,9 @@ public class CargadorArchivo {
 
     /**
      * Carga un diccionario de neurotransmisores desde un archivo CSV.
-     * Formato esperado: id, nombre, efecto, velocidad, descripcion.
-     * Si ya hay un diccionario cargado, pregunta si se desea reemplazar.
+     * Formato: id, nombre, efecto, velocidad, descripcion.
      *
-     * @param dicc Diccionario a actualizar (se vaciará si se confirma).
+     * @param dicc Diccionario a actualizar.
      */
     public void cargarDiccionario(DiccionarioNeurotransmisores dicc) {
         if (!dicc.estaVacio()) {
@@ -133,9 +130,9 @@ public class CargadorArchivo {
 
     /**
      * Guarda la red neuronal actual en un archivo CSV.
-     * Formato de salida idéntico al de entrada: origen, destino, distancia, ID_Neurotransmisor, coheficiente_eficiencia_sináptica.
+     * Formato de salida idéntico al de entrada.
      *
-     * @param red Red neuronal a guardar (debe contener conexiones).
+     * @param red Red neuronal a guardar.
      */
     public void guardarRedNeuronal(redNeuronal red) {
         if (red.estaVacia() || red.getTodasLasConexiones().estaVacia()) {
@@ -172,13 +169,6 @@ public class CargadorArchivo {
         }
     }
 
-    /**
-     * Método auxiliar para obtener una neurona por ID; si no existe, la crea y la agrega a la red.
-     *
-     * @param red Red neuronal.
-     * @param id  Identificador de la neurona.
-     * @return Neurona existente o recién creada.
-     */
     private Neurona obtenerOCrearNeurona(redNeuronal red, String id) {
         Neurona n = red.buscarNeurona(id);
         if (n == null) {
