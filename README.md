@@ -58,10 +58,10 @@ Ejemplo:  GLU,DA,0.75,GLU,0.9
   ├── Edd/ # Lista enlazada, pila, cola, tabla hash
   └── proyectoneuronal/ # Clase principal (main vacío por ahora)
   
-## 👥 Autores
+## Autores
 
 Proyecto desarrollado por Isaac Charco, Christian García y Antolin Rivera
 
-## 📄 Licencia
+## Licencia
 
 UNIMET
