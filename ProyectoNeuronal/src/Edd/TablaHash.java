@@ -1,8 +1,8 @@
 package Edd;
 
 /**
- * Implementación propia de una tabla hash genérica con resolución de colisiones por encadenamiento.
- * Las operaciones de inserción, búsqueda y eliminación tienen complejidad O(1) promedio.
+ * Implementaci&oacute;n propia de una tabla hash gen&eacute;rica con resoluci&oacute;n de colisiones por encadenamiento.
+ * Las operaciones de inserci&oacute;n, b&uacute;squeda y eliminaci&oacute;n tienen complejidad O(1) promedio.
  *
  * @param <K> Tipo de la clave.
  * @param <V> Tipo del valor.
@@ -14,7 +14,7 @@ public class TablaHash<K, V> {
     private int size;
 
     /**
-     * Constructor. La capacidad debería ser un número primo para mejorar la distribución.
+     * Constructor. La capacidad deber&iacute;a ser un n&uacute;mero primo para mejorar la distribuci&oacute;n.
      *
      * @param capacidad Tamaño inicial del arreglo.
      */
@@ -25,10 +25,10 @@ public class TablaHash<K, V> {
     }
 
     /**
-     * Calcula el índice a partir del código hash de la clave.
+     * Calcula el &iacute;ndice a partir del c&oacute;digo hash de la clave.
      *
      * @param clave Clave a indexar.
-     * @return Índice en el rango [0, capacidad-1].
+     * @return &Iacute;ndice en el rango [0, capacidad-1].
      */
     private int getIndice(K clave) {
         int hash = Math.abs(clave.hashCode());
@@ -38,7 +38,7 @@ public class TablaHash<K, V> {
     /**
      * Inserta un par clave-valor. Si la clave ya existe, actualiza el valor.
      *
-     * @param clave Identificador único.
+     * @param clave Identificador &uacute;nico.
      * @param valor Objeto asociado.
      */
     public void insertar(K clave, V valor) {
@@ -80,7 +80,7 @@ public class TablaHash<K, V> {
      * Elimina el par clave-valor correspondiente a la clave.
      *
      * @param clave Clave a eliminar.
-     * @return {@code true} si se eliminó, {@code false} si no existía.
+     * @return {@code true} si se elimin&oacute, {@code false} si no exist&iacugte;a.
      */
     public boolean eliminar(K clave) {
         int indice = getIndice(clave);
@@ -115,14 +115,14 @@ public class TablaHash<K, V> {
     /**
      * Retorna la cantidad de elementos almacenados.
      *
-     * @return Número de pares clave-valor.
+     * @return N&uacute;mero de pares clave-valor.
      */
     public int getSize() {
         return size;
     }
 
     /**
-     * Indica si la tabla está vacía.
+     * Indica si la tabla está vac&iacute;a.
      *
      * @return {@code true} si no hay elementos.
      */
