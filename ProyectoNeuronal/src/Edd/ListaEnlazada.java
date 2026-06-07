@@ -1,7 +1,7 @@
 package Edd;
 
 /**
- * Lista enlazada genérica simple.
+ * Lista enlazada gen&eacute;rica simple.
  * Permite agregar al final, verificar existencia y recorrer desde la cabeza.
  *
  * @param <T> Tipo de dato almacenado.
@@ -12,7 +12,7 @@ public class ListaEnlazada<T> {
     private int tamaño;
 
     /**
-     * Constructor. Crea una lista vacía.
+     * Constructor. Crea una lista vac&iacute;a.
      */
     public ListaEnlazada() {
         this.cabeza = null;
@@ -64,7 +64,7 @@ public class ListaEnlazada<T> {
     }
 
     /**
-     * @return Número de elementos en la lista.
+     * @return N&uacute;mero de elementos en la lista.
      */
     public int getTamaño() {
         return tamaño;
