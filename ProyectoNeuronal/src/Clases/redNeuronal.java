@@ -4,8 +4,7 @@ import Edd.ListaEnlazada;
 import Edd.Nodo;
 
 /**
- * Representa la red neuronal completa, incluyendo neuronas y conexiones sinápticas.
- * Gestiona la aplicación de fatiga, eliminación de elementos y acceso a los datos.
+ * Representa la red neuronal completa.
  *
  * @author ischl
  */
@@ -70,7 +69,6 @@ public class redNeuronal {
         Neurona aEliminar = buscarNeurona(id);
         if (aEliminar == null) return false;
 
-
         Nodo<ConexionSinaptica> actual = todasLasConexiones.getCabeza();
         Nodo<ConexionSinaptica> anterior = null;
         while (actual != null) {
@@ -88,8 +86,7 @@ public class redNeuronal {
                 actual = actual.getSiguiente();
             }
         }
-
-
+        
         Nodo<Neurona> nActual = todasLasNeuronas.getCabeza();
         Nodo<Neurona> nAnterior = null;
         while (nActual != null) {
@@ -126,19 +123,6 @@ public class redNeuronal {
      */
     public ListaEnlazada<ConexionSinaptica> getTodasLasConexiones() {
         return todasLasConexiones;
-    }
-
-    /**
-     * Simula el deterioro cognitivo por fatiga: multiplica el coeficiente de eficiencia (k)
-     * de cada conexión por 1.2. Requerimiento F.
-     */
-    public void aplicarFatiga() {
-        Nodo<ConexionSinaptica> actual = todasLasConexiones.getCabeza();
-        while (actual != null) {
-            double nuevoK = actual.getDato().getCoeficienteEficiencia() * 1.2;
-            actual.getDato().setCoeficienteEficiencia(nuevoK);
-            actual = actual.getSiguiente();
-        }
     }
 
     /**
